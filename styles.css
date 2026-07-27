@@ -1,0 +1,420 @@
+:root {
+    --phone-width: 390;
+    --phone-height: 844;
+    --phone-scale: 1;
+}
+
+@font-face {
+    font-family: 'Koganejidainogemu';
+    src: url('assets/fonts/Koganejidainogemu_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JF Dot Shinonome Gothic 14';
+    src: url('assets/fonts/JF-Dot-Shinonome-14-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-container {
+    /* background-color:tan; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    background-image: url('assets/animation-bg.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid #2c171c;
+}
+
+
+
+.game-start {
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    /* background-color:bisque; */
+    width: 337.55px;
+    height: 600px;
+    background-image: url('assets/background-start.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-begin {
+    border: 2px solid #2c171c;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 337.55px;
+    height: 600px;
+    background-image: url('assets/background-start.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+  
+}
+
+/* ELEMENT POSITION ABSOLUTE TO GAME BEGIN */
+
+.table {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    width: 340px;
+    top: 270px;
+    left: 0px;
+}
+
+.hero-not-cured {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    width: 320px;
+}
+
+.hero-cured {
+    display: none;
+    position: absolute;
+    left: -05px;
+    width: 340px;
+}
+
+.hero-visit {
+    display: none;
+    position: absolute;
+    width: 200px;
+    transition: transform ease 1s;
+}
+
+.show-up {
+    animation: showUp 2s ease forwards;
+}
+.shake {
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-6px);
+  }
+
+  40% {
+    transform: translateX(6px);
+  }
+
+  60% {
+    transform: translateX(-4px);
+  }
+
+  80% {
+    transform: translateX(4px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heart {
+    display: none;
+}
+
+.hearts-container {
+    z-index: 3;
+    position: absolute;
+    top: 340px;
+}
+
+.hearts-container {
+    display: none;
+}
+
+.hearts-container img {
+    width: 20px;
+}
+
+.message-container {
+    display: none;
+    border-radius: 15px 15px 15px 15px;
+    top: 0;
+    position: absolute;
+    background-color: #242424;
+    padding: 10px;
+    animation: message 2s ease forwards;
+}
+
+@keyframes message {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.message-container p {
+    color: #fff;
+    font-family: 'JF Dot Shinonome Gothic 14', sans-serif;
+    font-size: 10px;
+    line-height: 135%;
+}
+
+.start-game-button {
+    font-family: 'Koganejidainogemu', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    background-color: #3B3033;
+    border: 1px solid #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: background-color 0.1s ease;
+}
+
+.start-game-button:hover {
+    background-color: #5a4a4e;
+}
+
+.start-game-button:active {
+    font-size: 19px;
+}
+
+.interactive-container {
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 350px;
+}
+
+.play-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.antidepressant-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #241216;
+    padding: 18px 7px;
+    border-radius: 5px;
+    border: 1.5px solid #fff;
+}
+
+.antidepressant-button:hover {
+    background-color: #45232a;
+}
+
+.antidepressant-button:active {
+    background-color: #6b3743;
+}
+
+.antidepressant-button img {
+    width: 30px;
+    filter: drop-shadow(0 0 17px rgba(255, 255, 255, 0.358));
+    padding-bottom: 6px;
+}
+
+.antidepressant-button:hover img {
+    transform: scale(1.85);
+}
+
+.antidepressant-button span {
+    font-family: 'Koganejidainogemu', sans-serif;
+    font-size: 9px;
+    color: #fff;
+
+}
+
+.galoperidol-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #172131;
+    padding: 23px 7px;
+    border-radius: 5px;
+    border: 1.5px solid #fff;
+    transition: background ease-in 0.1s;
+}
+
+.galoperidol-button:hover {
+    background-color: #25344b;
+}
+
+.galoperidol-button:active {
+    background-color: #405980;
+}
+
+.galoperidol-button img {
+    width: 52.5px;
+    filter: drop-shadow(0 0 17px rgba(139, 152, 248, 0.358));
+}
+
+.galoperidol-button:hover img {
+    transform: scale(1.5);
+}
+
+.galoperidol-button span {
+    padding-top: 10px;
+    font-family: 'Koganejidainogemu', sans-serif;
+    font-size: 9px;
+    color: #fff;
+
+}
+
+.psyhotherapy-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #173A62;
+    padding: 13px 7px 20px 7px;
+    border-radius: 5px;
+    border: 1.5px solid #fff;
+    transition: background ease-in 0.1s;
+}
+
+.psyhotherapy-button:hover {
+    background-color: #1e4a7d;
+}
+
+.psyhotherapy-button:active {
+    background-color: #2a6ab4;
+}
+
+.psyhotherapy-button img {
+    width: 20px;
+    filter: drop-shadow(0 0 17px rgba(139, 152, 248, 0.358));
+}
+
+.psyhotherapy-button:hover img {
+    transform: scale(1.5);
+}
+
+.psyhotherapy-button span {
+    padding-top: 10px;
+    font-family: 'Koganejidainogemu', sans-serif;
+    font-size: 9px;
+    color: #fff;
+
+}
+
+
+.results-container {
+    background-color: #2D2D2D;
+    display: flex;
+    padding: 15px 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    gap: 55px;
+    position: relative;
+    min-height: 86.29px;
+}
+
+.line {
+    position: absolute;
+    height: 50px;
+    top: 15px;
+    left: 142px;
+}
+
+.healed-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.healed-container h1 {
+    font-family: 'Koganejidainogemu', sans-serif;
+    color: #fff;
+    font-weight: 100;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 3px;
+}
+
+.healed-container img {
+    width: 20px;
+}
+
+.not-healed-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-healed-container h1 {
+    font-family: 'Koganejidainogemu', sans-serif;
+    color: #fff;
+    font-weight: 100;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 3px;
+}
+
+.not-healed-container img {
+    width: 20px;
+}
+
+.play-again-button {
+    margin-top: 5px;
+    font-family: 'Koganejidainogemu', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    background-color: #3B3033;
+    border: 1px solid #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: background-color 0.1s ease;
+}
+
+.play-again-button:hover {
+    background-color: #5a4a4e;
+}
+
+.play-again-button:active {
+    transform: scale(1.01);
+}
