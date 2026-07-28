@@ -68,14 +68,14 @@
 
     position: relative;
 
-  
+
 }
 
 /* ELEMENT POSITION ABSOLUTE TO GAME BEGIN */
 
 .table {
     display: none;
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     width: 340px;
     top: 270px;
@@ -91,11 +91,62 @@
     width: 320px;
 }
 
+.hero-not-cured-move {
+    z-index: 10;
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    width: 320px;
+    animation: heroNotCuredMove 1s ease forwards;
+
+}
+
+@keyframes heroNotCuredMove {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
 .hero-cured {
+    z-index: 2;
     display: none;
     position: absolute;
     left: -05px;
     width: 340px;
+}
+
+.hero-2-cured {
+    display: none;
+    z-index: 2;
+    display: none;
+    position: absolute;
+    left: 15px;
+    width: 300px;
+}
+
+.hero-2-cured-moved {
+    display: none;
+    z-index: 2;
+    display: none;
+    position: absolute;
+    left: 15px;
+    width: 300px;
+    animation: heroNotCured2Moved 1s ease forwards;
+}
+
+@keyframes heroCured2Moved {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.5);
+    }
 }
 
 .hero-visit {
@@ -105,52 +156,172 @@
     transition: transform ease 1s;
 }
 
+.hero-2-visit {
+    display: none;
+    position: absolute;
+    top: 100px;
+    width: 300px;
+    transition: transform ease 1s;
+}
+
+.hero-not-cured-2 {
+    z-index: 2;
+    display: none;
+    position: absolute;
+    left: -8px;
+    width: 340px;
+    animation: shaking 0.2s ease;
+}
+
+.hero-not-cured-2-moved {
+    z-index: 2;
+    display: none;
+    position: absolute;
+    left: -8px;
+    width: 340px;
+    animation: heroNotCured2Moved 1s ease forwards;
+}
+
+@keyframes heroNotCured2Moved {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+@keyframes shaking {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-6px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    60% {
+        transform: translateX(-4px);
+    }
+
+    80% {
+        transform: translateX(4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
+
+.heroCured-moved {
+    z-index: 2;
+    position: absolute;
+    left: -05px;
+    width: 340px;
+    animation: heroCuredMoved 2s ease forwards;
+}
+
+@keyframes heroCuredMoved {
+    from {
+        opacity: 1;
+        left: -05px;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        left: -100px;
+        transform: scale(0.5);
+    }
+}
+
 .show-up {
     animation: showUp 2s ease forwards;
 }
+
 .shake {
-  animation: shake 0.4s ease;
+    animation: shake 0.4s ease;
 }
 
 @keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
+    0% {
+        transform: translateX(0);
+    }
 
-  20% {
-    transform: translateX(-6px);
-  }
+    20% {
+        transform: translateX(-6px);
+    }
 
-  40% {
-    transform: translateX(6px);
-  }
+    40% {
+        transform: translateX(6px);
+    }
 
-  60% {
-    transform: translateX(-4px);
-  }
+    60% {
+        transform: translateX(-4px);
+    }
 
-  80% {
-    transform: translateX(4px);
-  }
+    80% {
+        transform: translateX(4px);
+    }
 
-  100% {
-    transform: translateX(0);
-  }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 @keyframes showUp {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.succes-bg {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    width: 250px;
+    top: 100px;
+    left: 40px;
+}
+
+.fail-bg {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 90px;
+    width: 300px;
+    animation: ghosUp 3s ease;
+}
+
+@keyframes ghosUp {
+    from {
+        opacity: 1;
+        top: 90px;
+    }
+
+    to {
+        opacity: 0;
+        top: -60px;
+    }
 }
 
 .heart {
-    display: none;
+    display: block;
 }
 
 .hearts-container {
@@ -178,14 +349,15 @@
 }
 
 @keyframes message {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .message-container p {
@@ -339,7 +511,6 @@
 
 }
 
-
 .results-container {
     background-color: #2D2D2D;
     display: flex;
@@ -375,7 +546,12 @@
     padding-bottom: 3px;
 }
 
-.healed-container img {
+.icons-healed-container {
+    display: flex;
+}
+
+.healed-icon {
+    display: none;
     width: 20px;
 }
 
@@ -395,7 +571,12 @@
     padding-bottom: 3px;
 }
 
-.not-healed-container img {
+.icons-not-healed-container {
+    display: flex;
+}
+
+.not-healed-icon {
+    display: none;
     width: 20px;
 }
 
