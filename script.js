@@ -43,6 +43,9 @@ const heroVisit2 = document.querySelector('.hero-2-visit')
 const heroNotCured2 = document.querySelector('.hero-not-cured-2')
 const heroCured2 = document.querySelector('.hero-2-cured')
 
+const gameEndsContainer = document.querySelector('.game-ends')
+const gameEndsButton = document.querySelector('.game-ends-button')
+
 
 if ((getComputedStyle(gamePlayingScreen)).display === 'none') {
     gameStartScreen.style.display = 'flex'
@@ -223,6 +226,9 @@ function secondScenario() {
             heroNotCured2.classList.remove('hero-not-cured-2')
             heroNotCured2.classList.add('hero-not-cured-2-moved')
         }, 1000)
+        setTimeout(() => {
+            gameEnds()
+        }, 4000)
     }
     function galoperidolButtonClick() {
         typingSound.pause()
@@ -245,8 +251,11 @@ function secondScenario() {
             heroCured2.classList.remove('hero-2-cured')
             heroCured2.classList.add('hero-2-cured-moved')
         }, 1000)
+        setTimeout(() => {
+            gameEnds()
+        }, 4000)
     }
-        function psyhotherapyButtonClick() {
+    function psyhotherapyButtonClick() {
         typingSound.pause()
         messageContainer.style.display = 'none';
         heroVisit2.style.display = 'none';
@@ -267,6 +276,9 @@ function secondScenario() {
             heroCured2.classList.remove('hero-2-cured')
             heroCured2.classList.add('hero-2-cured-moved')
         }, 1000)
+        setTimeout(() => {
+            gameEnds()
+        }, 4000)
     }
     antidepressantsButton.addEventListener('click', antidepressantsButtonClick)
     galoperidolButton.addEventListener('click', galoperidolButtonClick)
@@ -282,6 +294,16 @@ function startGameButtonActive() {
     firstScenario()
 }
 
+function gameEnds() {
+    gamePlayingScreen.style.display = 'none'
+    startGameButton.style.display = 'none'
+    gameStartScreen.style.display = 'flex'
+    gameEndsContainer.style.display = 'block'
+    gameEndsButton.addEventListener('click', () => {
+        location.reload();
+    })
+}
+
 startGameButton.addEventListener('click', startGameButtonActive)
 
 tableAsset.style.display = 'block';
@@ -293,52 +315,6 @@ const psyhotherapyButton = document.getElementById('psyhotherapy-button')
 const galoperidolButton = document.getElementById('galoperidol-button')
 
 let currentPatient = textHeroOne;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 const playAgainButton = document.getElementById('play-again')
