@@ -77,12 +77,13 @@
     /* background-color:bisque; */
     width: 337.55px;
     height: 600px;
-    background-image: url('./assets/background-start.png');
+    background-image: url('./assets/start-screen.gif');
     background-repeat: no-repeat;
     background-size: cover;
     display: none;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .game-begin {
@@ -183,6 +184,121 @@
     }
 }
 
+.hero-3-cured {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    left: 30px;
+    width: 300px;
+}
+
+.hero-3-Cured-moved {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    left: 30px;
+    width: 300px;
+    animation: hero3CuredMove 1s ease forwards;
+
+}
+
+@keyframes hero3CuredMove {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.hero-4-cured {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    top: 90px;
+    width: 300px;   
+}
+
+.hero-4-cured-moved {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    top: 90px;
+    width: 300px;
+    animation: hero4CuredMove 1s ease forwards;     
+}
+
+@keyframes hero4CuredMove {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.hero-5-cured {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    width: 300px; 
+}
+
+.hero-5-Cured-moved {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    width: 300px;
+    animation: hero4CuredMove 1s ease forwards;  
+}
+
+.hero-4-not-cured {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    width: 300px;
+}
+
+.explosion {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    left: 15px;
+    top: -20px;
+    width: 300px;
+}
+
+.hero-4-not-cured-move {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    width: 300px;   
+    animation: hero4notcuredmove 1s ease forwards;
+}
+
+@keyframes hero4notcuredmove {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
 .hero-visit {
     display: none;
     position: absolute;
@@ -196,6 +312,91 @@
     top: 100px;
     width: 300px;
     transition: transform ease 1s;
+}
+
+.hero-3-visit {
+    display: none;
+    position: absolute;
+    width: 290px;
+    animation: showUpHero3 1.5s ease forwards;
+}
+
+@keyframes showUpHero3 {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hero-4-visit {
+    display: none;
+    position: absolute;
+    width: 290px;
+    animation: showUpHero3 1.5s ease forwards;
+}
+
+.hero-5-visit {
+    display: none;
+    position: absolute;
+    top: 90px;
+    width: 350px;
+    animation: showUpHero3 1.5s ease forwards;
+}
+
+.hero-5-not-cured {
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    width: 340px;
+    animation: shaking 0.2s ease;
+}
+
+.hero-5-not-cured-move {
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    width: 340px;
+    animation: shaking 0.2s ease, hero3NotCuredMove 1s ease forwards;
+}
+
+.hero-3-not-cured {
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: 160px;
+    left: 5px;
+    width: 360px;
+    animation: shaking 0.2s ease;
+}
+
+.hero-3-not-cured-move {
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: 160px;
+    left: 5px;
+    width: 360px;
+    animation: hero3NotCuredMove 1s ease forwards;
+}
+
+@keyframes hero3NotCuredMove {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
 }
 
 .hero-not-cured-2 {
@@ -252,8 +453,6 @@
         transform: translateX(0);
     }
 }
-
-
 
 
 .heroCured-moved {
@@ -401,7 +600,48 @@
     line-height: 135%;
 }
 
+.game-results-container {
+    text-align: center;
+    display: none;
+    position: absolute;
+    margin-left: 10px;
+    margin-right: 10px;
+    top: 60px;
+    z-index: 111;
+    background-color: #241216;
+    padding: 10px 10px;
+    font-size: 20px;
+    font-family: 'Koganejidainogemu', sans-serif;
+
+}
+
+.game-start-heading {
+    position: absolute;
+    font-size: 35px;
+    font-weight: 400;
+    top: 10px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-family: 'Koganejidainogemu', sans-serif;
+    background-color: #241216;
+    z-index: 2;
+}
+
+.game-start-p {
+    font-family: 'JF Dot Shinonome Gothic 14', sans-serif;
+    z-index: 1;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 10px;
+    top: 65px;
+    padding: 10px 10px;
+    background-color: #2D2D2D;
+    color: #fff;
+}
+
 .start-game-button {
+    margin-top: 190px;
     font-family: 'Koganejidainogemu', sans-serif;
     font-size: 20px;
     color: #fff;
