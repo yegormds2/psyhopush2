@@ -4,6 +4,10 @@
     --phone-scale: 1;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 @font-face {
     font-family: 'Koganejidainogemu';
     src: url('assets/fonts/Koganejidainogemu_0.ttf') format('truetype');
@@ -53,9 +57,12 @@
     font-size: 20px;
     color: #fff;
     background-color: #3B3033;
-    border: 1px solid #fff;
+    border: none;
     padding: 15px 20px;
-    border-radius: 5px;
+    box-shadow: 0px 2px 0px 0px #fff,
+        0px -2px 0px 0px #fff,
+        2px 0px 0px 0px #fff,
+        -2px 0px 0px 0px #fff;
     transition: background-color 0.1s ease;
 }
 
@@ -220,7 +227,7 @@
     position: absolute;
     left: 20px;
     top: 90px;
-    width: 300px;   
+    width: 300px;
 }
 
 .hero-4-cured-moved {
@@ -230,13 +237,14 @@
     left: 20px;
     top: 90px;
     width: 300px;
-    animation: hero4CuredMove 1s ease forwards;     
+    animation: hero4CuredMove 1s ease forwards;
 }
 
 @keyframes hero4CuredMove {
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -248,7 +256,7 @@
     position: absolute;
     left: 20px;
     top: 60px;
-    width: 300px; 
+    width: 300px;
 }
 
 .hero-5-Cured-moved {
@@ -258,7 +266,7 @@
     left: 20px;
     top: 60px;
     width: 300px;
-    animation: hero4CuredMove 1s ease forwards;  
+    animation: hero4CuredMove 1s ease forwards;
 }
 
 .hero-4-not-cured {
@@ -285,7 +293,7 @@
     position: absolute;
     left: 15px;
     top: 20px;
-    width: 300px;   
+    width: 300px;
     animation: hero4notcuredmove 1s ease forwards;
 }
 
@@ -293,6 +301,7 @@
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -560,7 +569,7 @@
 .hearts-container {
     z-index: 3;
     position: absolute;
-    top: 340px;
+    top: 320px;
 }
 
 .hearts-container {
@@ -578,6 +587,7 @@
     position: absolute;
     background-color: #242424;
     padding: 10px;
+
     animation: message 2s ease forwards;
 }
 
@@ -612,7 +622,15 @@
     padding: 10px 10px;
     font-size: 20px;
     font-family: 'Koganejidainogemu', sans-serif;
+    box-shadow: 0px 2px 0px 0px #fff,
+        0px -2px 0px 0px #fff,
+        2px 0px 0px 0px #fff,
+        -2px 0px 0px 0px #fff;
 
+}
+
+.game-result-p {
+    color: #fff;
 }
 
 .game-start-heading {
@@ -621,10 +639,14 @@
     font-weight: 400;
     top: 10px;
     padding: 10px 10px;
-    border-radius: 20px;
     font-family: 'Koganejidainogemu', sans-serif;
     background-color: #241216;
+    color: white;
     z-index: 2;
+    box-shadow: 0px 2px 0px 0px #fff,
+        0px -2px 0px 0px #fff,
+        2px 0px 0px 0px #fff,
+        -2px 0px 0px 0px #fff;
 }
 
 .game-start-p {
@@ -633,23 +655,29 @@
     position: absolute;
     font-size: 20px;
     font-weight: 400;
-    border-radius: 10px;
     top: 65px;
     padding: 10px 10px;
     background-color: #2D2D2D;
     color: #fff;
+    box-shadow: 0px 2px 0px 0px #fff,
+        0px -2px 0px 0px #fff,
+        2px 0px 0px 0px #fff,
+        -2px 0px 0px 0px #fff;
 }
 
 .start-game-button {
     margin-top: 190px;
     font-family: 'Koganejidainogemu', sans-serif;
     font-size: 20px;
+    border: none;
     color: #fff;
     background-color: #3B3033;
-    border: 1px solid #fff;
     padding: 15px 20px;
-    border-radius: 5px;
     transition: background-color 0.1s ease;
+    box-shadow: 0px 2px 0px 0px #fff,
+        0px -2px 0px 0px #fff,
+        2px 0px 0px 0px #fff,
+        -2px 0px 0px 0px #fff;
 }
 
 .start-game-button:hover {
@@ -683,8 +711,11 @@
     justify-content: center;
     background-color: #241216;
     padding: 18px 7px;
-    border-radius: 5px;
-    border: 1.5px solid #fff;
+    border: none;
+    box-shadow: 0px 2px 0px 0px #fff,
+        0px -2px 0px 0px #fff,
+        2px 0px 0px 0px #fff,
+        -2px 0px 0px 0px #fff;
 }
 
 .antidepressant-button:hover {
@@ -719,8 +750,10 @@
     justify-content: center;
     background-color: #172131;
     padding: 23px 7px;
-    border-radius: 5px;
-    border: 1.5px solid #fff;
+    box-shadow: 0px 2px 0px 0px #fff,
+        0px -2px 0px 0px #fff,
+        2px 0px 0px 0px #fff,
+        -2px 0px 0px 0px #fff;
     transition: background ease-in 0.1s;
 }
 
@@ -755,8 +788,10 @@
     align-items: center;
     background-color: #173A62;
     padding: 13px 7px 20px 7px;
-    border-radius: 5px;
-    border: 1.5px solid #fff;
+    box-shadow: 0px 2px 0px 0px #fff,
+        0px -2px 0px 0px #fff,
+        2px 0px 0px 0px #fff,
+        -2px 0px 0px 0px #fff;
     transition: background ease-in 0.1s;
 }
 
@@ -789,8 +824,10 @@
     background-color: #2D2D2D;
     display: flex;
     padding: 15px 10px;
-    border: 2px solid #fff;
-    border-radius: 10px;
+    box-shadow: 0px 2px 0px 0px #fff,
+        0px -2px 0px 0px #fff,
+        2px 0px 0px 0px #fff,
+        -2px 0px 0px 0px #fff;
     margin-top: 10px;
     gap: 55px;
     position: relative;
@@ -860,9 +897,12 @@
     font-size: 20px;
     color: #fff;
     background-color: #3B3033;
-    border: 1px solid #fff;
+    border: none;
     padding: 15px 20px;
-    border-radius: 5px;
+    box-shadow: 0px 2px 0px 0px #fff,
+        0px -2px 0px 0px #fff,
+        2px 0px 0px 0px #fff,
+        -2px 0px 0px 0px #fff;
     transition: background-color 0.1s ease;
 }
 
