@@ -78,10 +78,6 @@ let curedPatients = 0
 let notCuredPatients = 0
 
 
-if ((getComputedStyle(gamePlayingScreen)).display === 'none') {
-    gameStartScreen.style.display = 'flex'
-}
-
 menuMusic.play()
 
 const startGameButton = document.getElementById('start-game-button')
