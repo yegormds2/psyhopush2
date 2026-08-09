@@ -669,7 +669,7 @@ function gameEnds() {
     let resultText = `Ты вылечил ${curedPatients} пациентов, не фартануло ${notCuredPatients} пациентам, ты прошел игру на ${grades}%!`
     gamePlayingScreen.style.display = 'none'
     startGameButton.style.display = 'none'
-    gameStartScreen.style.backgroundImage = 'url("./assets/background-start.png")';
+    gameStartScreen.style.backgroundImage = 'url("./assets/background-ending.gif")';
     gameStartScreen.style.display = 'flex'
     gameEndsContainer.style.display = 'block'
     gameResultsContainer.style.display = 'block'

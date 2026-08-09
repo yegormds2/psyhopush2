@@ -42,6 +42,9 @@
     display: none;
     position: absolute;
     top: 250px;
+    /* background-image: url('./assets/background-ending.gif');
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 .game-ends p {
